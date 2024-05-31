@@ -1,0 +1,117 @@
+/* App.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-container {
+    margin-bottom: 20px;
+  }
+  
+  .form-container label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .book-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .book-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .book-item:hover {
+    background-color: #eaeaea;
+  }
+  
+  .book-item h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  .book-item p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  .alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  .alert-error {
+    background-color: #dc3545;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 1rem;
+  }
+  
+  .nav-button {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    background-color: #444;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: #555;
+  }
+  
+  .nav-button:focus {
+    outline: none;
+  }
+  

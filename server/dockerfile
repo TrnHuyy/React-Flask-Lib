@@ -1,0 +1,17 @@
+# Sử dụng một image base có sẵn của Python
+FROM python:3.9-slim
+
+# Thiết lập thư mục làm việc
+WORKDIR /app
+
+# Sao chép các tệp cần thiết vào thư mục làm việc trong container
+COPY . .
+
+# Cài đặt các gói cần thiết bằng pip
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Mở cổng 8000 cho Flask
+EXPOSE 8000
+
+# Khởi động ứng dụng Flask khi container được chạy
+CMD ["python", "run.py"]

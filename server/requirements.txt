@@ -1,0 +1,11 @@
+Flask
+flask-migrate
+flask-sqlalchemy
+pymysql==1.0.2
+cryptography
+
+flask-login
+flask-cors
+
+click
+bcrypt
