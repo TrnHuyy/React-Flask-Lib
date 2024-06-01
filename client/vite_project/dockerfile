@@ -1,14 +1,11 @@
-# Sử dụng hình ảnh Node chính thức làm hình ảnh gốc
 FROM node:14-alpine
 
-# tạo thư mục app
-RUN mkdir /app
-
-# Đặt thư mục làm việc trong container
 WORKDIR /app
 
-# Sao chép file package.json và yarn.lock (nếu có) vào thư mục làm việc
 COPY package*.json ./
+
+#cài typescript
+RUN npm install -g typescript
 
 # Cài đặt các phụ thuộc của ứng dụng
 RUN npm install --lockfile-version 3
@@ -16,10 +13,11 @@ RUN npm install --lockfile-version 3
 # Sao chép toàn bộ mã nguồn của ứng dụng vào thư mục làm việc
 COPY . .
 
+#build
 RUN npm run build
 
 # Mở cổng 3000 để truy cập ứng dụng ReactJS
 EXPOSE 3000
 
 # Khởi động ứng dụng ReactJS
-ENTRYPOINT ["npm", "run"]
+ENTRYPOINT ["npm", "run", "dev"]

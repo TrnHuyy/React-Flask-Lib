@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
     "composite": true,
+    "skipLibCheck": true, //ban dau ko co cai nay
     "module": "ESNext",
-    "moduleResolution": "Node",
-    "allowSyntheticDefaultImports": true
+    "moduleResolution": "bundler",
+    //"moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
+    "strict": true // ban dau ko co cai nay
   },
   "include": ["vite.config.ts"]
 }

@@ -2,6 +2,7 @@ import {FormEvent, useState} from 'react'
 import { createBrowserHistory } from 'history'
 import config from '@config/config'
 import {createTheme, ThemeProvider, TextField, Button} from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const themeForm = createTheme({
     palette: {
@@ -14,6 +15,7 @@ const themeForm = createTheme({
 const AddBookForm = () => {
     const [title, setTitle] = useState("")
     const [author, setAuthor] = useState("")
+    const navigate = useNavigate()
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault()
@@ -43,7 +45,7 @@ const AddBookForm = () => {
             alert("Book created successfully!")
             setAuthor("")
             setTitle("")
-            history.push("/view_book")
+            navigate('/view_book')
         }
 
     }

@@ -32,7 +32,7 @@ function BookList() {
       setBook(respone.data)
   }
 
-  const handleUpdate = () => {
+  const handleDeleteButton = () => {
     // Khi cuốn sách đã được sửa đổi thành công, cập nhật lại danh sách cuốn sách
     fetchBook();
   };
@@ -46,7 +46,9 @@ function BookList() {
     fetchBook()
   }, [])
 
-  return(
+  if(books != null)
+  {
+    return(
     <div>
       <h1> List Book</h1>
       <table>
@@ -67,7 +69,7 @@ function BookList() {
                 <td>{book.author}</td>
                 <td>
                     <Button variant='contained' color='primary' component={Link} to={`/update_book/${book.id}`}>Update</Button>
-                    <DeleteButton id={book.id}></DeleteButton>
+                    <DeleteButton id={book.id} onDeleteButton={handleDeleteButton}></DeleteButton>
                 </td>
               </tr>
             ))
@@ -75,7 +77,17 @@ function BookList() {
         </tbody>
       </table>
     </div>
-  ) 
+    )
+  }
+  else {
+    return(
+      <div>
+        <h1>List Book</h1>
+        <h2>No Books Found</h2>
+        <Button component={Link} to="/add_user" color="inherit">Add User</Button>
+      </div>
+    );
+  }
 }
 
 export default BookList

@@ -18,13 +18,15 @@ const theme = createTheme({
 
 interface Props {
   id: number
+  onDeleteButton: () => void
 }
 
-function DeleteButton({id}: Props) {
+function DeleteButton({id, onDeleteButton}: Props) {
   const handleDelete = async () => {
     try {
       await axios.post(`${config.apiBaseUrl}/books/delete/${id}`);
       alert("Book deleted successfully!")
+      onDeleteButton()
     } 
     catch (error) {
       console.error("Error deleting book:", error);

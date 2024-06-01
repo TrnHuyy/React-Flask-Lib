@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react';
 import axios from 'axios';
 import config from '@config/config';
 import {createTheme, ThemeProvider, TextField, Button} from '@mui/material';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const themeForm = createTheme({
     palette: {
@@ -18,6 +18,7 @@ const UpdateBookForm:React.FC = ({}) => {
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
     const {id} = useParams();
+    const navigate = useNavigate()
     //const dispatch = useDispatch()
 
     const handleSubmit = async (e: FormEvent) => {
@@ -45,6 +46,7 @@ const UpdateBookForm:React.FC = ({}) => {
             alert("Book updated successfully!")
             setAuthor("")
             setTitle("")
+            navigate('/view_book')
         }
     };
 
