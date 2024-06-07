@@ -34,7 +34,7 @@ services:
       - "3000:3000"
     volumes:
       - .:/app
-    environment:
-      - NODE_ENV=development
+      - /app/node_modules
+    command: ["sh", "-c", "cd /app/client/vite_project && npm run dev"]
 volumes:
   db-data:

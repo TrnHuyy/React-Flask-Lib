@@ -7,5 +7,6 @@ export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   server: { // ban dau ko co cai nay
     host: true,
+    port: 3000
   },
 })

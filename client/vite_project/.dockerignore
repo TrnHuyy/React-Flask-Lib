@@ -2,4 +2,4 @@
 
 # Bỏ qua node_modules để tránh copy toàn bộ thư mục này vào container
 
-node_modules/
+node_modules
